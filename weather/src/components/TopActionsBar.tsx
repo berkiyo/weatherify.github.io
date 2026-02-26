@@ -10,22 +10,6 @@ export const TopActionsBar = ({ resolvedTheme, themePreference, onToggleTheme }:
   return (
     <div className="flex flex-wrap items-center justify-end gap-2">
       <a
-        href="https://apps.apple.com/us/developer/polydez/id1683312256"
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-xl border border-[#7ba2c65c] px-3 py-2 text-sm font-semibold text-weather-ink transition hover:bg-[#ffffff94] dark:border-[#3f61808a] dark:hover:bg-[#1b344a9c]"
-      >
-        iOS Apps
-      </a>
-      <a
-        href="https://play.google.com/store/apps/dev?id=8534558498201265502"
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-xl border border-[#7ba2c65c] px-3 py-2 text-sm font-semibold text-weather-ink transition hover:bg-[#ffffff94] dark:border-[#3f61808a] dark:hover:bg-[#1b344a9c]"
-      >
-        Android Apps
-      </a>
-      <a
         href="https://www.tekbyte.net"
         target="_blank"
         rel="noreferrer"
