@@ -3,16 +3,59 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --weather-ink: 16 36 62;
+    --weather-muted: 74 103 132;
+    --weather-accent: 11 110 193;
+    --weather-bg:
+      radial-gradient(circle at 14% 16%, rgba(255, 204, 122, 0.36) 0%, transparent 28%),
+      radial-gradient(circle at 84% 20%, rgba(71, 184, 234, 0.24) 0%, transparent 30%),
+      linear-gradient(175deg, #edf7ff 0%, #f8fbff 100%);
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    --weather-ink: 226 236 247;
+    --weather-muted: 146 171 196;
+    --weather-accent: 123 206 255;
+    --weather-bg:
+      radial-gradient(circle at 16% 16%, rgba(233, 144, 82, 0.22) 0%, transparent 31%),
+      radial-gradient(circle at 84% 22%, rgba(78, 154, 222, 0.22) 0%, transparent 34%),
+      linear-gradient(175deg, #091725 0%, #0d1f31 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+      color-scheme: dark;
+      --weather-ink: 226 236 247;
+      --weather-muted: 146 171 196;
+      --weather-accent: 123 206 255;
+      --weather-bg:
+        radial-gradient(circle at 16% 16%, rgba(233, 144, 82, 0.22) 0%, transparent 31%),
+        radial-gradient(circle at 84% 22%, rgba(78, 154, 222, 0.22) 0%, transparent 34%),
+        linear-gradient(175deg, #091725 0%, #0d1f31 100%);
+    }
+  }
+
+  :root.light {
+    color-scheme: light;
+    --weather-ink: 16 36 62;
+    --weather-muted: 74 103 132;
+    --weather-accent: 11 110 193;
+    --weather-bg:
+      radial-gradient(circle at 14% 16%, rgba(255, 204, 122, 0.36) 0%, transparent 28%),
+      radial-gradient(circle at 84% 20%, rgba(71, 184, 234, 0.24) 0%, transparent 30%),
+      linear-gradient(175deg, #edf7ff 0%, #f8fbff 100%);
+  }
+
   * {
     box-sizing: border-box;
   }
 
   body {
-    @apply min-h-screen min-w-[320px] text-weather-ink antialiased;
-    background:
-      radial-gradient(circle at 14% 16%, rgba(255, 204, 122, 0.36) 0%, transparent 28%),
-      radial-gradient(circle at 84% 20%, rgba(71, 184, 234, 0.24) 0%, transparent 30%),
-      linear-gradient(175deg, #edf7ff 0%, #f8fbff 100%);
+    @apply min-h-screen min-w-[320px] font-sans text-weather-ink antialiased;
+    background: var(--weather-bg);
   }
 
   #root {

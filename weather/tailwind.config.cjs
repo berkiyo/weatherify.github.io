@@ -1,13 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         weather: {
-          ink: "#10243e",
-          muted: "#4a6784",
-          accent: "#0b6ec1",
+          ink: "rgb(var(--weather-ink) / <alpha-value>)",
+          muted: "rgb(var(--weather-muted) / <alpha-value>)",
+          accent: "rgb(var(--weather-accent) / <alpha-value>)",
         },
       },
       boxShadow: {
