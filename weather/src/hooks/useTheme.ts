@@ -46,18 +46,10 @@ export const useTheme = () => {
       setSystemPrefersDark(event.matches);
     };
 
-    if ("addEventListener" in mediaQuery) {
-      mediaQuery.addEventListener("change", onChange);
-    } else {
-      mediaQuery.addListener(onChange);
-    }
+    mediaQuery.addEventListener("change", onChange);
 
     return () => {
-      if ("removeEventListener" in mediaQuery) {
-        mediaQuery.removeEventListener("change", onChange);
-      } else {
-        mediaQuery.removeListener(onChange);
-      }
+      mediaQuery.removeEventListener("change", onChange);
     };
   }, []);
 
