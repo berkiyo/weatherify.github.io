@@ -1,6 +1,6 @@
 import type { LookupWindow } from "../types/weather";
 
-const LOOKUP_LIMIT = 1000;
+const LOOKUP_LIMIT = 500;
 const LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const LOOKUP_STORAGE_KEY = "weatherify.lookup-window.v2";
 
